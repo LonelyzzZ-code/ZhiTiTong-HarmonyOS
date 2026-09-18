@@ -10,3 +10,7 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+._*
+.mimosa/
+**/.preview/
+.DS_Store
