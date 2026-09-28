@@ -11,6 +11,70 @@
     {
       "name": "EntryAbility_label",
       "value": "智题通"
+    },
+    {
+      "name": "exam_list",
+      "value": "习题列表"
+    },
+    {
+      "name": "doing_exercises",
+      "value": "在线答题"
+    },
+    {
+      "name": "remaining_questions",
+      "value": "剩余题数："
+    },
+    {
+      "name": "answer_card",
+      "value": "答题卡"
+    },
+    {
+      "name": "question",
+      "value": "题目"
+    },
+    {
+      "name": "re_answer",
+      "value": "重新刷题"
+    },
+    {
+      "name": "Welcome",
+      "value": "欢迎使用智题通"
+    },
+    {
+      "name": "Login",
+      "value": "登录"
+    },
+    {
+      "name": "Reg",
+      "value": "注册"
+    },
+    {
+      "name": "placeholder_phone",
+      "value": "请输入手机号"
+    },
+    {
+      "name": "placeholder_password",
+      "value": "请输入密码"
+    },
+    {
+      "name": "placeholder_password_confirm",
+      "value": "请确认密码"
+    },
+    {
+      "name": "answered_questions",
+      "value": "已刷题目"
+    },
+    {
+      "name": "wrong_questions",
+      "value": "错题数量"
+    },
+    {
+      "name": "exam_subject_list",
+      "value": "科目列表"
+    },
+    {
+      "name": "begin_exam",
+      "value": "开始做题"
     }
   ]
 }

@@ -1,6 +1,8 @@
 {
   "src": [
     "pages/Index",
-    "pages/mainpage"
+    "pages/mainpage",
+    "pages/shijuankapian",
+    "pages/ExamListPage"
   ]
 }

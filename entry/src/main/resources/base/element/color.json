@@ -3,6 +3,98 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "primary_color",
+      "value": "#2C9FF4"
+    },
+    {
+      "name": "divider_color",
+      "value": "#3e3e3e"
+    },
+    {
+      "name": "green_color",
+      "value": "#5cc896"
+    },
+    {
+      "name": "orange_color",
+      "value": "#f3b342"
+    },
+    {
+      "name": "gray_color",
+      "value": "#c7c7c8"
+    },
+    {
+      "name": "light_gray_yellow",
+      "value": "#fdf2e0"
+    },
+    {
+      "name": "light_gray_color",
+      "value": "#efefef"
+    },
+    {
+      "name": "light_orange_color",
+      "value": "#fdf2e0"
+    },
+    {
+      "name": "red_color",
+      "value": "#D4564D"
+    },
+    {
+      "name": "wrong_font_color",
+      "value": "#D75553"
+    },
+    {
+      "name": "wrong_bg_color",
+      "value": "#f9edeb"
+    },
+    {
+      "name": "un_font_color",
+      "value": "#807F7F"
+    },
+    {
+      "name": "un_bg_color",
+      "value": "#efefef"
+    },
+    {
+      "name": "right_font_color",
+      "value": "#5DCAAB"
+    },
+    {
+      "name": "right_bg_color",
+      "value": "#f4fffc"
+    },
+    {
+      "name": "black_color",
+      "value": "#31394a"
+    },
+    {
+      "name": "user_bgc",
+      "value": "#e8e8e8"
+    },
+    {
+      "name": "tab_text_color",
+      "value": "#4e83f7"
+    },
+    {
+      "name": "tab_bg_color",
+      "value": "#ecf3fd"
+    },
+    {
+      "name": "home_bg_color",
+      "value": "#4b77d5"
+    },
+    {
+      "name": "exam_button_bgc",
+      "value": "#2356c0"
+    },
+    {
+      "name": "progress_text_color",
+      "value": "#ccc"
+    },
+    {
+      "name": "exam_subject_background",
+      "value": "#4b78d5"
     }
   ]
 }

@@ -4,10 +4,14 @@ import { router } from '@kit.ArkUI';
 @Component
 struct Test1 {
   @State message: string = 'Hello World';
-
+  @State username: string = '';
+aboutToAppear(): void {
+  let params = router.getParams() as Record<string,string>;
+  this.username = params?.username??"未获取到账号";
+}
   build() {
     RelativeContainer() {
-      Text(this.message)
+      Text(this.username)
         .id('Test1HelloWorld')
         .fontSize($r('app.float.page_text_font_size'))
         .fontWeight(FontWeight.Bold)
