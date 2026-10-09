@@ -1,5 +1,6 @@
 import { router } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Textinput } from '../component/TextInput';
 
 @Entry
 @Component
@@ -22,35 +23,10 @@ struct Index {
         .margin({ top: 16 })
       Blank()
       Column({ space: 16 }) {
-        TextInput({ placeholder: '请输入用户名' })
-          .width('100%')
-          .height(48)
-          .backgroundColor('#F2F3F5')
-          .borderRadius(24)
-          .onChange((value) => {
-            console.log(value)
-            this.username = value;
-          })
-        TextInput({ placeholder: '请输入密码' })
-          .width('100%')
-          .height(48)
-          .type(InputType.Password)
-          .backgroundColor('#F2F3F5')
-          .borderRadius(24)
-          .onChange((value) => {
-            console.log(value)
-            this.password = value;
-          })
+        Textinput({ text1: this.username, placeholder: '请输入用户名' })
+        Textinput({ text1: this.password, placeholder: '请输入密码' })
         if (this.isRegister) {
-          TextInput({ placeholder: '请确认密码' })
-            .width('100%')
-            .height(48)
-            .type(InputType.Password)
-            .backgroundColor('#F2F3F5')
-            .borderRadius(24)
-            .onChange((value) => {
-              this.confirmPassword = value;
-            })
+          Textinput({ text1: this.confirmPassword, placeholder: '请确认密码' })
         }
         Button(this.isRegister ? '注册' : '登陆')
           .width('100%')
