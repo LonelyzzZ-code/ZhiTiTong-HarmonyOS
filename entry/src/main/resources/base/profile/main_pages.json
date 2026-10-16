@@ -2,7 +2,7 @@
   "src": [
     "pages/Index",
     "pages/mainpage",
-    "pages/shijuankapian",
+    "pages/Home",
     "pages/ExamListPage"
   ]
 }

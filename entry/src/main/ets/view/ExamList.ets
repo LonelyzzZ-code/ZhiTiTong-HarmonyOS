@@ -1,8 +1,8 @@
 import { ExamModel } from '../model/ExamModel';
 
-@Entry
 @Component
-struct Shijuankapian {
+export struct ExamList {
+
   private swiperImages: Resource[] = [
     $r('app.media.swiper1'),
     $r('app.media.swiper2'),
@@ -11,7 +11,7 @@ struct Shijuankapian {
     $r('app.media.swiper5'),
     $r('app.media.swiper6')
   ]
-  @State ExamList: ExamModel[] = [
+  @State examList: ExamModel[] = [
     {
       id: 1,
       subject_id: 1,
@@ -37,6 +37,46 @@ struct Shijuankapian {
       answered_questions: 60
     }
   ]
+  @Builder Itemcard(item: ExamModel) {
+    Row({ space: 12 }) {
+      Image($r("app.media.exam_icon"))
+        .width(56)
+        .height(56)
+      Column({ space: 6 }) {
+        Text(item.title)
+          .fontSize(16)
+          .fontWeight(FontWeight.Medium)
+          .fontColor('#1A1A1A')
+          .maxLines(1)
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+        Text(`已答 ${item.answered_questions}/${item.total_questions} 题`)
+          .fontSize(12)
+          .fontColor('#999999')
+        Progress({ value: item.answered_questions, total: item.total_questions })
+          .width('100%')
+          .color('#4F8CFF')
+          .style({ strokeWidth: 6 })
+      }
+      .layoutWeight(1)
+      .alignItems(HorizontalAlign.Start)
+
+      Button("开始刷题")
+        .height(32)
+        .fontSize(14)
+        .fontColor(Color.White)
+        .backgroundColor('#4F8CFF')
+        .onClick(() => {
+
+        })
+    }
+    .width('100%')
+    .padding(12)
+    .borderRadius(16)
+    .backgroundColor(Color.White)
+    .alignItems(VerticalAlign.Center)
+    .shadow({ radius: 12, color: 'rgba(0, 0, 0, 0.06)', offsetY: 4 })
+  }
+
   build() {
     Column({ space: 12 }) {
       Swiper() {
@@ -57,47 +97,13 @@ struct Shijuankapian {
       .indicator(new DotIndicator()
         .color('rgba(255, 255, 255, 0.5)')
         .selectedColor('#FFFFFF'))
+
       Text("随机试卷")
         .fontSize(22)
         .fontWeight(FontWeight.Bold)
         .width('100%')
-      ForEach(this.ExamList, (item: ExamModel) => {
-        Row({ space: 12 }) {
-          Image($r("app.media.exam_icon"))
-            .width(56)
-            .height(56)
-          Column({ space: 6 }) {
-            Text(item.title)
-              .fontSize(16)
-              .fontWeight(FontWeight.Medium)
-              .fontColor('#1A1A1A')
-              .maxLines(1)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-            Text(`已答 ${item.answered_questions}/${item.total_questions} 题`)
-              .fontSize(12)
-              .fontColor('#999999')
-            Progress({ value: item.answered_questions, total: item.total_questions })
-              .width('100%')
-              .color('#4F8CFF')
-              .style({ strokeWidth: 6 })
-          }
-          .layoutWeight(1)
-          .alignItems(HorizontalAlign.Start)
-          Button("开始刷题")
-            .height(32)
-            .fontSize(14)
-            .fontColor(Color.White)
-            .backgroundColor('#4F8CFF')
-            .onClick(() => {
-
-            })
-        }
-        .width('100%')
-        .padding(12)
-        .borderRadius(16)
-        .backgroundColor(Color.White)
-        .alignItems(VerticalAlign.Center)
-        .shadow({ radius: 12, color: 'rgba(0, 0, 0, 0.06)', offsetY: 4 })
+      ForEach(this.examList, (item: ExamModel) => {
+        this.Itemcard(item)
       }, (item: ExamModel) => item.id.toString())
     }
     .width('100%')
@@ -110,4 +116,3 @@ struct Shijuankapian {
     .alignItems(HorizontalAlign.Center)
   }
 }
-

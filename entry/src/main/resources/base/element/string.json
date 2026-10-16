@@ -75,6 +75,18 @@
     {
       "name": "begin_exam",
       "value": "开始做题"
+    },
+    {
+      "name": "recommend",
+      "value": "推荐"
+    },
+    {
+      "name": "answer",
+      "value": "答题"
+    },
+    {
+      "name": "mine",
+      "value": "个人中心"
     }
   ]
 }
