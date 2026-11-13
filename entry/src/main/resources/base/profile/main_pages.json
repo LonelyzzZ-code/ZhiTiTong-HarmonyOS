@@ -1,8 +1,6 @@
 {
   "src": [
     "pages/Index",
-    "pages/mainpage",
-    "pages/Home",
-    "pages/ExamListPage"
+    "pages/Home"
   ]
 }

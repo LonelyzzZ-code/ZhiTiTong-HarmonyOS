@@ -1,6 +1,8 @@
-import { router } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { router } from '@kit.ArkUI';
 import { Textinput } from '../component/TextInput';
+import { ExamApi, RequestParams } from '../net/ExamApi';
+import { Logger } from '../utils/Logger';
 
 @Entry
 @Component
@@ -10,6 +12,30 @@ struct Index {
   @State username: string = '';
   @State isRegister: boolean = false;
   @State confirmPassword: string = '';
+  doLogin() {
+    if (this.username === '' || this.password === '') {
+      this.getUIContext().getPromptAction().showToast({ message: '请输入用户名和密码' })
+      return
+    }
+    const body: RequestParams = {
+      username: this.username,
+      password: this.password,
+      avertar: ''
+    };
+    ExamApi.login(body)
+      .then(() => {
+        Logger.info('登录成功，用户名：', this.username)
+        this.getUIContext().getPromptAction().showToast({ message: '登录成功' })
+        router.replaceUrl({ url: 'pages/Home' })
+      })
+      .catch((err: string) => {
+        Logger.error('登录失败，用户名：', this.username, '，原因：', err)
+        this.getUIContext().getPromptAction().showToast({ message: `登录失败：${err}` })
+      })
+  };
+  doReg() {
+    this.getUIContext().getPromptAction().showToast({ message: '注册接口暂未接入' })
+  };
   build() {
     Column() {
       Blank()
@@ -23,10 +49,10 @@ struct Index {
         .margin({ top: 16 })
       Blank()
       Column({ space: 16 }) {
-        Textinput({ text1: this.username, placeholder: '请输入用户名' })
-        Textinput({ text1: this.password, placeholder: '请输入密码' })
+        Textinput({ text1: $username, placeholder: '请输入用户名' })
+        Textinput({ text1: $password, placeholder: '请输入密码' })
         if (this.isRegister) {
-          Textinput({ text1: this.confirmPassword, placeholder: '请确认密码' })
+          Textinput({ text1: $confirmPassword, placeholder: '请确认密码' })
         }
         Button(this.isRegister ? '注册' : '登陆')
           .width('100%')
@@ -41,24 +67,9 @@ struct Index {
           .margin({ top: 8 })
           .onClick(() => {
             if (this.isRegister) {
-              if (this.password !== this.confirmPassword) {
-                this.getUIContext().getPromptAction().showToast({ message: '两次密码不一致' })
-                return
-              }
-              this.getUIContext().getPromptAction().showToast({ message: '注册成功，请登录' })
-              this.isRegister = false
-              this.confirmPassword = ''
-              return
-            }
-            if (this.username === '123456' && this.password === '123456') {
-              this.getUIContext().getPromptAction().showToast({ message: '登录成功' })
-              router.pushUrl({ url: 'pages/mainpage',params:{username:this.username}})
-                .catch((err: BusinessError) => {
-                  console.error(`跳转失败 code:${err.code} msg:${err.message}`)
-                  this.getUIContext().getPromptAction().showToast({ message: `跳转失败:${err.code}` })
-                })
+              this.doReg()
             } else {
-              this.getUIContext().getPromptAction().showToast({ message: '登录失败' })
+              this.doLogin()
             }
           })
         Text(this.isRegister ? '已有账号？去登录' : '没有账号？去注册')

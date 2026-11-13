@@ -87,6 +87,30 @@
     {
       "name": "mine",
       "value": "个人中心"
+    },
+    {
+      "name": "exam_detail",
+      "value": "在线答题"
+    },
+    {
+      "name": "submit",
+      "value": "交卷"
+    },
+    {
+      "name": "answer_result",
+      "value": "答题结果"
+    },
+    {
+      "name": "total_question",
+      "value": "总题数"
+    },
+    {
+      "name": "right_answer",
+      "value": "答对"
+    },
+    {
+      "name": "wrong_answer",
+      "value": "答错"
     }
   ]
 }

@@ -95,6 +95,22 @@
     {
       "name": "exam_subject_background",
       "value": "#4b78d5"
+    },
+    {
+      "name": "right_answer_bg_color",
+      "value": "#d4f4f0"
+    },
+    {
+      "name": "right_answer_font_color",
+      "value": "#70cdab"
+    },
+    {
+      "name": "wrong_answer_font_color",
+      "value": "#d4574e"
+    },
+    {
+      "name": "submit_button_bgc",
+      "value": "#7bd9bf"
     }
   ]
 }
